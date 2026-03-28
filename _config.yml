@@ -1,0 +1,53 @@
+title: "TalentMatch"
+description: "Plataforma que conecta talento con empresas tecnológicas: ofertas, recomendaciones y visibilidad profesional."
+email: contact@talentmatch.example
+timezone: UTC
+baseurl: ""
+permalink: "/:title/"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+author: TalentMatch
+paginate: 10
+disqus: ''
+locale: es_es
+lang: es
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+sass:
+  sass_dir: _sass
+  style: :compressed
+ganalytics: ''
+
+# Authors
+authors:
+  Sebastian:
+    name: SebastianHumberto
+    display_name: Sebastian
+    avatar: 'assets/images/sebastian.png'
+    email: shuachua@isise.edu.pe
+    description: "Integrante del Grupo 3"
+  Tatiana:
+     name: TatusG
+     display_name: Tatiana
+     avatar: 'assets/images/tatiana.jpg'
+     email: gmerly@isise.edu.pe
+     description: "Integrante del Grupo 3"
+
+# Social
+social:
+  instagram: ""
+  facebook: ""
+  twitter: ""
+
+# Plugins
+plugins: 
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-archives

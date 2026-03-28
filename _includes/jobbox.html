@@ -1,0 +1,16 @@
+<!-- begin job box -->
+<div class="card job-card">
+  <div class="card-body">
+    <h3 class="card-title h5"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+    <div class="small text-muted mb-2">{{ post.company }} • {{ post.location }} • {{ post.date | date: "%Y-%m-%d" }}</div>
+    <p class="card-text">{{ post.excerpt | strip_html | truncatewords:25 }}</p>
+    <div class="job-tags small">
+      {% if post.tags %}
+        {% for tag in post.tags %}
+          <span class="badge badge-pill badge-light">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<!-- end job box -->
