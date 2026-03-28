@@ -121,6 +121,18 @@ small, .small {
     position:fixed;
     background:#fff;
 }
+.navbar-brand img {
+    max-height: 80px;
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand img {
+        max-height: 48px;
+    }
+}
 
 .social-icon {
     display: inline-block !important;
