@@ -1,11 +1,13 @@
+---
 layout: page
 title: About
-permalink: "/about/"
-image: assets/images/screenshot.png
+permalink: /about/
+image: assets/images/logo1.png
+---
 
-TalentMatch es una plataforma que ayuda a empresas tecnológicas y startups a encontrar talento especializado, y a profesionales a descubrir oportunidades relevantes.
+**TalentMatch** es una plataforma que ayuda a empresas tecnológicas y startups a encontrar talento especializado, y a profesionales a descubrir oportunidades relevantes.
 
-Qué ofrecemos:
+# Qué ofrecemos:
 
 - Recomendaciones automáticas basadas en habilidades y experiencia.
 - Panel de autoservicio para empresas y candidatos.
