@@ -2,7 +2,7 @@ title: "TalentMatch"
 description: "Plataforma que conecta talento con empresas tecnológicas: ofertas, recomendaciones y visibilidad profesional."
 email: contact@talentmatch.example
 timezone: UTC
-baseurl: ""
+baseurl: "/TalentMatch"
 permalink: "/:title/"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
