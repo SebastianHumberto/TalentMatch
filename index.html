@@ -4,58 +4,264 @@ layout: default
 background: '/img/bg-index.jpg'
 ---
 
-<!-- Home Intro
-================================================== -->
+<!-- ===== HERO SECTION ===== -->
 {% if page.url == "/" %} 
-<div class="rounded mb-5 hero">
-  <div class="row align-items-center justify-content-between">
-    <div class="col-md-6">
-      <h1 class="font-weight-bold mb-4 serif-font">Encuentra talento o tu próximo empleo</h1>
-      <p class="lead mb-4">TalentMatch conecta empresas tecnológicas con profesionales, ofreciendo recomendaciones inteligentes y visibilidad profesional.</p>
-      <a href="{{site.baseurl}}/jobs/" class="btn btn-dark text-white px-4 btn-lg mr-2">Buscar empleos</a>
-      <a href="{{site.baseurl}}/contact/" class="btn btn-outline-dark px-4 btn-lg">Publicar CV / Contactar</a>
-    </div>
-    <div class="col-md-6 text-right pl-0 pl-lg-4">
-      <img class="intro" height="420" src="{{site.baseurl}}/assets/images/intro.svg">      
+<section class="fade-in">
+  <div class="rounded mb-5 hero">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md-6">
+        <h1 class="font-weight-bold mb-4 serif-font">Encuentra talento o tu próximo empleo</h1>
+        <p class="lead mb-4">TalentMatch conecta empresas tecnológicas con profesionales especializados mediante recomendaciones inteligentes basadas en IA.Diseñada para startups, empresas tech y profesionales en búsqueda de crecimiento.</p>
+        <div class="d-flex gap-3">
+          <a href="{{site.baseurl}}/jobs/" class="btn btn-dark text-white px-4 btn-lg">🔍 Buscar Empleos</a>
+          <a href="{{site.baseurl}}/contact/" class="btn btn-outline-dark px-4 btn-lg">✉️ Publicar CV</a>
+        </div>
+      </div>
+      <div class="col-md-6 text-right pl-0 pl-lg-4">
+        <img class="intro" height="420" src="{{site.baseurl}}/assets/images/intro.svg" alt="TalentMatch Platform">      
+      </div>
     </div>
   </div>
-</div>
+</section>
 {% endif %}
 
-<!-- Featured
-================================================== -->
-<section class="row">
-  {% for post in site.posts %}
-      {% if post.featured == true %}
-          <div class="col-md-4 mb-5">
-          {% include postbox.html %}
-          </div>
-      {% endif %}
-  {% endfor %}
+<!-- ===== VALOR PROPOSITION ===== -->
+<section class="section-spacing">
+  <h2 class="text-center mb-5 font-weight-bold">Por qué elegir TalentMatch</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">🤖</div>
+        <h4 class="feature-title">Recomendaciones con IA</h4>
+        <p class="feature-desc">Algoritmos de machine learning que sugieren candidatos ideales para cada posición, ahorrando tiempo en filtración manual.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">⚡</div>
+        <h4 class="feature-title">Búsqueda Avanzada</h4>
+        <p class="feature-desc">Filtrado por tecnologías, experiencia, ubicación y más. Encuentra exactamente lo que necesitas en segundos.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">📊</div>
+        <h4 class="feature-title">Visibilidad Profesional</h4>
+        <p class="feature-desc">Destaca tu experiencia con un perfil optimizado. Acceso a ofertas exclusivas y oportunidades premium.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">💼</div>
+        <h4 class="feature-title">Para Empresas</h4>
+        <p class="feature-desc">Publica ofertas, accede a talento verificado, y gestiona candidaturas desde un dashboard intuitivo.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">🌟</div>
+        <h4 class="feature-title">Premium Features</h4>
+        <p class="feature-desc">Suscripción SaaS con alertas personalizadas, no limita en búsquedas y reportes de compatibilidad.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="feature-box">
+        <div class="feature-icon">🔗</div>
+        <h4 class="feature-title">Integración Fácil</h4>
+        <p class="feature-desc">API moderna, webhooks y sincronización con sistemas HRIS. Se integra con tu stack existente.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Posts List with Sidebar (except featured)
-================================================== -->
-<section class="row">
-  <div class="col-sm-8">
-    <div class="row">
-      {% for post in paginator.posts %}
-      {% unless post.featured == true %}
-      <div class="col-md-6 mb-5">
-        {% include postbox.html %}
-      </div>
-      {% endunless %}
-      {% endfor %}
+<!-- ===== FEATURED OFFERS ===== -->
+<section class="section-spacing" style="background: var(--bg-light); border-radius: 12px; padding: 3rem 2rem;">
+  <h2 class="text-center mb-5 font-weight-bold">Ofertas Destacadas</h2>
+  <div class="row">
+    {% for post in site.posts %}
+      {% if post.featured == true %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          {% include postbox.html %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ===== STATS SECTION ===== -->
+<section class="section-spacing">
+  <div class="row text-center">
+    <div class="col-md-3 mb-4">
+      <h3 class="font-weight-bold" style="color: var(--primary); font-size: 2.5rem;">500+</h3>
+      <p class="text-muted">Ofertas de Empleo</p>
     </div>
-    <!-- Pagination -->
-    <div class="bottompagination">
-      <span class="navigation" role="navigation">
-          {% include pagination.html %}
-      </span>
+    <div class="col-md-3 mb-4">
+      <h3 class="font-weight-bold" style="color: var(--primary); font-size: 2.5rem;">5,000+</h3>
+      <p class="text-muted">Profesionales Registrados</p>
+    </div>
+    <div class="col-md-3 mb-4">
+      <h3 class="font-weight-bold" style="color: var(--primary); font-size: 2.5rem;">200+</h3>
+      <p class="text-muted">Empresas</p>
+    </div>
+    <div class="col-md-3 mb-4">
+      <h3 class="font-weight-bold" style="color: var(--primary); font-size: 2.5rem;">1,200+</h3>
+      <p class="text-muted">Matchs Exitosos</p>
     </div>
   </div>
-  <div class="col-sm-4">
-    {% include sidebar.html %}
+</section>
+
+<!-- ===== PLATFORMS & TECHNOLOGIES ===== -->
+<section class="section-spacing">
+  <h2 class="text-center mb-5 font-weight-bold">Principales Tecnologías Demandadas</h2>
+  <div class="row">
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">⚛️</div>
+      <p class="font-weight-bold">React</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Frontend</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🐍</div>
+      <p class="font-weight-bold">Python</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Backend & IA</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">☁️</div>
+      <p class="font-weight-bold">AWS</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Infraestructura</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🐳</div>
+      <p class="font-weight-bold">Docker</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">DevOps</p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔗</div>
+      <p class="font-weight-bold">SQL</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Bases de Datos</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">K8️⃣</div>
+      <p class="font-weight-bold">Kubernetes</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Orquestación</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">📊</div>
+      <p class="font-weight-bold">TensorFlow</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Machine Learning</p>
+    </div>
+    <div class="col-6 col-md-3 text-center mb-4">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">⚙️</div>
+      <p class="font-weight-bold">Go</p>
+      <p style="color: var(--text-light); font-size: 0.9rem;">Backend Rápido</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="section-spacing" style="background: var(--bg-light); border-radius: 12px; padding: 3rem 2rem;">
+  <h2 class="text-center mb-2 font-weight-bold">Planes y Precios</h2>
+  <p class="text-center text-muted mb-5">Elige el plan perfecto para ti o tu empresa</p>
+  
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <h5 class="font-weight-bold mb-2">FREE</h5>
+          <p class="text-muted mb-3">Para empezar</p>
+          <h3 style="color: var(--primary);">S/.0/mes</h3>
+          <ul class="list-unstyled mt-4 mb-4" style="text-align: left;">
+            <li>✓ Búsqueda básica</li>
+            <li>✓ Hasta 10 aplicaciones/mes</li>
+            <li>✓ Perfil profesional</li>
+            <li>✗ Recomendaciones IA</li>
+            <li>✗ Soporte premium</li>
+          </ul>
+          <a href="{{site.baseurl}}/jobs/" class="btn btn-outline-dark btn-block">Comenzar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card text-center" style="border: 2px solid var(--primary); transform: scale(1.05);">
+        <div style="background: var(--primary); color: white; padding: 0.5rem; border-radius: 0 0 0 0;">
+          <span class="badge badge-light" style="background: #fff !important; color: var(--primary) !important;">POPULAR</span>
+        </div>
+        <div class="card-body py-4">
+          <h5 class="font-weight-bold mb-2">PREMIUM</h5>
+          <p class="text-muted mb-3">Para profesionales</p>
+          <h3 style="color: var(--primary);">S/.29,99/mes</h3>
+          <ul class="list-unstyled mt-4 mb-4" style="text-align: left;">
+            <li>✓ Búsqueda avanzada</li>
+            <li>✓ Aplicaciones ilimitadas</li>
+            <li>✓ Recomendaciones con IA</li>
+            <li>✓ Alertas personalizadas</li>
+            <li>✓ Soporte prioritario</li>
+          </ul>
+          <a href="{{site.baseurl}}/contact/" class="btn btn-dark btn-block">Activar Plan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card text-center">
+        <div class="card-body py-4">
+          <h5 class="font-weight-bold mb-2">EMPRESA</h5>
+          <p class="text-muted mb-3">Para equipos</p>
+          <h3 style="color: var(--primary);">Contactar</h3>
+          <ul class="list-unstyled mt-4 mb-4" style="text-align: left;">
+            <li>✓ Publicar ofertas</li>
+            <li>✓ Gestor de candidatos</li>
+            <li>✓ API custom</li>
+            <li>✓ Dashboard analytics</li>
+            <li>✓ Account manager</li>
+          </ul>
+          <a href="{{site.baseurl}}/contact/" class="btn btn-outline-dark btn-block">Ver Planes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LATEST POSTS ===== -->
+<section class="section-spacing">
+  <h2 class="text-center mb-5 font-weight-bold">Últimas Oportunidades de Empleo</h2>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        {% for post in paginator.posts %}
+        {% unless post.featured == true %}
+        <div class="col-md-6 mb-4">
+          {% include postbox.html %}
+        </div>
+        {% endunless %}
+        {% endfor %}
+      </div>
+      
+      <!-- Pagination -->
+      <div class="bottompagination mt-4">
+        <span class="navigation" role="navigation">
+            {% include pagination.html %}
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="section-spacing" style="background: linear-gradient(135deg, var(--primary) 0%, #067348 100%); color: white; border-radius: 12px; padding: 3rem 2rem; text-align: center;">
+  <h2 class="font-weight-bold mb-4">¿Listo para cambiar tu carrera?</h2>
+  <p class="mb-4" style="font-size: 1.1rem; opacity: 0.95;">Únete a miles de profesionales que ya encontraron su oportunidad perfecta con TalentMatch.</p>
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <a href="{{site.baseurl}}/jobs/" class="btn btn-light btn-lg">Explorar Ofertas</a>
+    <a href="{{site.baseurl}}/contact/" class="btn btn-outline-light btn-lg">Publicar Oferta</a>
   </div>
 </section>
